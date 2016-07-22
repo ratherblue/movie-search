@@ -3,19 +3,64 @@
 }
 
 html {
-  font-family: Roboto, sans-serif;
+  font-family: $font-family;
   font-weight: 300;
   color: #fff;
   line-height: 1.5;
+  background: url(http://i.imgur.com/CaTD18H.jpg) no-repeat 50% 50%;
+  background-size: 200%; // zoom in so we can animate
+  animation: animate-background 80s infinite;
 }
 
 body {
   margin: 0;
-  font-size: 16px;
-  background-color: #333;
+  font-size: $font-size-base;
+  background-color: rgba(0, 0, 0, .9);
 }
 
 html,
 body {
   min-height: 100vh; // ensure backgrounds extend
+}
+
+@keyframes animate-background {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+h1 {
+  font-weight: inherit;
+  font-size: 30px;
+  margin: 0;
+  padding: 20px 0;
+
+  @media (min-width: $screen-xs-min) {
+    font-size: 36px;
+    width: $container-xs;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 45px;
+    width: $container-sm;
+  }
+
+  @media (min-width: $screen-md-min) {
+    font-size: 54px;
+    width: $container-md;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    font-size: 60px;
+    width: $container-lg;
+  }
+}
+
+input,
+button {
+  font-family: inherit;
+  font-size: inherit;
 }

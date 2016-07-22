@@ -5,6 +5,10 @@ export default React.createClass({
     return (
       <span className="rating-stars">
         {this.props.rating}
+        <i className="fa fa-star" aria-hidden="true"></i>
+        <i className="fa fa-star" aria-hidden="true"></i>
+        <i className="fa fa-star" aria-hidden="true"></i>
+        <i className="fa fa-star" aria-hidden="true"></i>
       </span>
     );
   }

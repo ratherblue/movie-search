@@ -13,6 +13,7 @@ var data = {"page":1,"results":[{"poster_path":"\/gj282Pniaa78ZJfbaixyLXnXEDI.jp
 
 ReactDOM.render(
     <div>
+      <h1>Movie Search</h1>
       <SearchForm />
       <SearchResults results={data.results} />
     </div>,

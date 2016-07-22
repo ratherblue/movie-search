@@ -5,10 +5,12 @@
   width: 150px;
   margin: 10px;
   position: relative;
+  border: 2px solid #444;
 
   &:hover {
     .overlay {
       display: block;
+      opacity: 1;
     }
   }
 
@@ -30,8 +32,30 @@
 
   .overlay {
     background-color: #000;
-    display:none;
+    // display: none;
     position: absolute;
     bottom: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    padding: 3px 6px;
+
+    .release-date {
+      font-size: 12px;
+      display: block;
+    }
+  }
+}
+
+.rating-stars {
+  background-color: #FC0;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  display: block;
+
+  .fa-star {
+    // background-color: #;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
   }
 }

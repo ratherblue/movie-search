@@ -1,7 +1,12 @@
 .search-results {
   list-style-type: none;
-  margin: 0;
+  margin: 0 -10px; // negate left/right margins in movie-tile so they touch the edges
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+
+  @media (min-width: $screen-sm-min) {
+    justify-content: space-between;
+  }
 }

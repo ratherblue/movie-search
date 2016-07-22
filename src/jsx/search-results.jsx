@@ -1,7 +1,5 @@
 import React from 'react';
-
 import MovieTile from './movie-tile';
-
 
 export default React.createClass({
   render: function() {
