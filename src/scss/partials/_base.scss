@@ -1,13 +1,14 @@
 html {
-  font-family: sans-serif;
-  color: $text-color;
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  color: #fff;
   line-height: 1.5;
-  text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
   font-size: 16px;
+  background-color: #333;
 }
 
 html,

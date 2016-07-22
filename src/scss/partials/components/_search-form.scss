@@ -1,0 +1,47 @@
+.search-form {
+  fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  legend {
+    font-size: 36px;
+  }
+
+  // hide label from all but screen readers
+  // (label is for accessibility)
+  .search-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  .search-input {
+    border: 1px solid #666;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    transition: border-color .15s ease-in-out, opacity .15s ease-in-out;
+    opacity: 0.2;
+
+    &:focus {
+      outline: 0;
+      border-color: #ccc;
+      opacity: .5
+    }
+
+    &::-webkit-input-placeholder {
+      color: #333;
+      opacity: 1;
+      font-size: 16px;
+    }
+  }
+
+}
