@@ -82,6 +82,10 @@ h2 {
   }
 }
 
+main {
+  display: block; // ie 11 fix
+}
+
 input,
 button {
   font-family: inherit;
