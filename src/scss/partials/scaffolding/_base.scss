@@ -7,15 +7,16 @@ html {
   font-weight: 300;
   color: #fff;
   line-height: 1.5;
-  background: url(http://i.imgur.com/CaTD18H.jpg) no-repeat 50% 50%;
+  background: url('http://i.imgur.com/CaTD18H.jpg') no-repeat 0 0;
   background-size: 200%; // zoom in so we can animate
-  animation: animate-background 80s infinite;
+  animation: animate-background 80s infinite; // give a subtle animated background
 }
 
 body {
   margin: 0;
   font-size: $font-size-base;
   background-color: rgba(0, 0, 0, .9);
+  padding: 20px 0;
 }
 
 html,
@@ -32,30 +33,52 @@ body {
   }
 }
 
-h1 {
+h1,
+h2 {
   font-weight: inherit;
-  font-size: 30px;
+  font-family: inherit;
   margin: 0;
-  padding: 20px 0;
+}
+
+h1 {
+  font-size: 30px;
+  padding-bottom: 24px;
 
   @media (min-width: $screen-xs-min) {
     font-size: 36px;
-    width: $container-xs;
   }
 
   @media (min-width: $screen-sm-min) {
     font-size: 45px;
-    width: $container-sm;
   }
 
   @media (min-width: $screen-md-min) {
     font-size: 54px;
-    width: $container-md;
   }
 
   @media (min-width: $screen-lg-min) {
     font-size: 60px;
-    width: $container-lg;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  padding-bottom: 15px;
+
+  @media (min-width: $screen-xs-min) {
+    font-size: 30px;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 36px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    font-size: 45px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    font-size: 50px;
   }
 }
 

@@ -1,10 +1,16 @@
 .search-results {
   list-style-type: none;
-  margin: 0 -10px; // negate left/right margins in movie-tile so they touch the edges
+  margin: 0 $gutter-width / -2; // negate left/right margins equal to .movie-tile margins so they touch the edges
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column; // keep 1 result per line in smallest viewport
+  align-items: center;
+
+  @media (min-width: $screen-xs-min) {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
 
   @media (min-width: $screen-sm-min) {
     justify-content: space-between;
