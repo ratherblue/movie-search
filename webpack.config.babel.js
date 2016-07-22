@@ -2,7 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import autoprefixer from 'autoprefixer';
 
-module.exports = {
+export default {
   entry: {
     js: [path.join(__dirname, 'src', 'jsx', 'index.jsx')],
     vendor: ['react', 'react-dom'] // separate vendor files for caching
