@@ -15,8 +15,10 @@ export default React.createClass({
           <legend>Movie Search Form</legend>{/* always include legend for accessibility */}
           <label className="search-label" htmlFor="query">Query</label>{/* always include label for accessibility */}
           <input id="query" name="query" type="search" placeholder="Search Movies" onChange={this.handleChange}
-              ref="searchTerm" value={this.props.searchTerm} className="search-input" spellCheck="false" autoCorrect="off" autoComplete="off" required />
-          <button type="submit" className="search-button" onClick={this.props.onSearchSubmit}>Search</button>
+              ref="searchTerm" value={this.props.searchTerm} className="search-input"
+              spellCheck="false" autoCorrect="off" autoComplete="off" required />
+          <button type="submit" className="default-button search-button"
+              onClick={this.props.onSearchSubmit}>Search</button>
         </fieldset>
       </form>
     );

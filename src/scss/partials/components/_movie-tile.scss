@@ -32,7 +32,6 @@
 
   .overlay {
     background-color: #000;
-    // display: none;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -48,14 +47,5 @@
 }
 
 .rating-stars {
-  background-color: #FC0;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
   display: block;
-
-  .fa-star {
-    // background-color: #;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-  }
 }

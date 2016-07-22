@@ -3,7 +3,10 @@ import dateFormat from 'dateformat';
 
 import RatingStars from './rating-stars';
 
-// separate component, but keep in same file to prevent spaghetti code
+const DEFAULT_POSTER_IMG = 'http://ia.media-imdb.com/images/G/01/imdb/images/nopicture/medium/film-3385785534._CB270902307_.png'; // eslint-disable-line max-len
+const POSTER_IMG_PREFIX = 'http://image.tmdb.org/t/p/w154';
+
+// Separate component, but keep in same file to prevent spaghetti code
 // and because it's tied to the MovieTile
 var TileOverlay = React.createClass({
   render: function() {
@@ -30,15 +33,15 @@ export default React.createClass({
 
     // have a default image background in case result is empty
     var divStyle = {
-      backgroundImage: 'url("http://ia.media-imdb.com/images/G/01/imdb/images/nopicture/medium/film-3385785534._CB270902307_.png")'
+      backgroundImage: 'url(' + DEFAULT_POSTER_IMG + ')'
     };
 
     if (poster !== null) {
-      divStyle.backgroundImage = 'url(http://image.tmdb.org/t/p/w154' + poster + ')';
+      divStyle.backgroundImage = 'url(' + POSTER_IMG_PREFIX + poster + ')';
     }
 
     return (
-      <li className="movie-tile" title={title} key={this.props.movie.id}>
+      <li className="movie-tile" title={title}>
         <span className="poster" style={divStyle}></span>
         <span className="title">{title}</span>
         <TileOverlay voteAverage={this.props.movie.vote_average} releaseDate={this.props.movie.release_date} />

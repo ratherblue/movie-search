@@ -4,9 +4,16 @@ $font-size-base: 16px;
 
 // colors
 $text-color: #333;
+$button-color: #65a1ef;
+$button-hover-color: lighten($button-color, 5%);
+$button-hover-border-color: lighten($button-color, 20%);
+
+// borders
+$input-border-width: 2px;
 
 // gutter
 $gutter-width: 24px;
+$input-padding: $gutter-width / 2; // keep button and input padding consistent
 
 // breakpoints
 $screen-xs-min: 480px;

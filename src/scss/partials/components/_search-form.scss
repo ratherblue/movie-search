@@ -1,6 +1,5 @@
 .search-form {
   $input-height: 50px; // set variable so input and button are same height
-  $input-padding: 15px;
 
   margin-bottom: 30px;
 
@@ -11,7 +10,7 @@
     position: relative;
   }
 
-  // hide label and legend from all but screen readers
+  // hide label and legend for all but screen readers
   // (both elements are for accessibility)
   legend,
   .search-label {
@@ -36,8 +35,7 @@
     padding: 0 $input-padding;
 
     &:focus {
-      outline: 0; // make sure to add focus styles if outline is removed
-      background: rgba(255, 255, 255, .6);
+      background: rgba(255, 255, 255, .6); // add a focus style since outline is removed
     }
 
     // no autoprefixer for ::placeholder exists yet, so normally would add a mixin here
@@ -50,26 +48,9 @@
   }
 
   .search-button {
-    background-color: #65a1ef;
     height: $input-height;
-    line-height: $input-height - 4px; // subtract 4px to accommodate 2px border
-    border: 2px solid #65a1ef;
+    line-height: $input-height - ($input-border-width * 2); // subtract border width x 2 so text is still vertically centered
     position: absolute;
     right: 0;
-    padding: 0 $input-padding;
-
-    &:hover {
-      cursor: pointer;
-    }
-
-    &:focus {
-      outline: 0; // make sure to add focus styles if outline is removed
-    }
-
-    &:hover,
-    &:focus {
-      background-color: lighten(#65a1ef, 5%);
-      border-color: lighten(#65a1ef, 20%);
-    }
   }
 }

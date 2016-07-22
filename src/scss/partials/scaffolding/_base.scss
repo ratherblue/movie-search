@@ -9,7 +9,7 @@ html {
   line-height: 1.5;
   background: url('http://i.imgur.com/CaTD18H.jpg') no-repeat 0 0;
   background-size: 200%; // zoom in so we can animate
-  animation: animate-background 80s infinite; // give a subtle animated background
+  animation: animate-background 80s infinite linear; // give a subtle animated background
 }
 
 body {
@@ -28,6 +28,7 @@ body {
   0% {
     background-position: 0 0;
   }
+
   100% {
     background-position: 100% 0;
   }
@@ -63,7 +64,6 @@ h1 {
 
 h2 {
   font-size: 24px;
-  padding-bottom: 15px;
 
   @media (min-width: $screen-xs-min) {
     font-size: 30px;
@@ -86,4 +86,19 @@ input,
 button {
   font-family: inherit;
   font-size: inherit;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+button {
+  &:hover {
+    cursor: pointer;
+  }
+
+  &[disabled] {
+    cursor: default;
+    pointer-events: none; // prevent all click events
+  }
 }

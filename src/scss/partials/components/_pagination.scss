@@ -1,0 +1,16 @@
+.pagination {
+  display: flex;
+  width: 200px;
+
+  button {
+    $button-height: 40px; // keep height and line-height the same to verticall align text
+
+    height: $button-height;
+    line-height: $button-height - ($input-border-width * 2); // subtract border widthx2 so text is vertically centered
+    flex: 1;
+
+    &:last-child {
+      margin-left: $gutter-width / 2;
+    }
+  }
+}

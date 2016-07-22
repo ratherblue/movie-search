@@ -12,3 +12,10 @@
     justify-content: flex-start;
   }
 }
+
+.results-header {
+  display: flex; // put results header and paging buttons on the same line
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+}
