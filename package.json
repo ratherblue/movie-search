@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "description": "Movie Search",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint -v && eslint . --ext=jsx,js",
@@ -36,6 +36,8 @@
     "babel-preset-react": "6.11.1",
     "css-loader": "0.23.1",
     "dateformat": "1.0.12",
+    "ejs": "2.4.2",
+    "express": "4.14.0",
     "eslint": "3.1.1",
     "eslint-plugin-react": "5.2.2",
     "node-sass": "3.8.0",

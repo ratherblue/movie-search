@@ -8,10 +8,8 @@ Build steps:
 
 1. `npm install`
 2. `npm build`
-3. Open `src/index.html` to view site
-
-
-
+3. `node app`
+4. Open `http://localhost:3000/`
 
 
 [travis-image]: https://img.shields.io/travis/ratherblue/movie-search/master.svg?style=flat-square
