@@ -4,6 +4,9 @@ node_js:
   - "5"
   - "4"
 
+script:
+  - npm run build
+
 notifications:
   on_success: false
   on_failure: change

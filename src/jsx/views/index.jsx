@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import SearchForm from './search-form';
-import SearchResults from './search-results';
+import SearchForm from '../components/search-form';
+import SearchResults from '../components/search-results';
 
 
-require('../scss/styles.scss'); // note: you could make component-specific
+require('../../scss/styles.scss'); // note: you could make component-specific
                                 // SCSS here, but just focusing on the
                                 // JavaScript due to time
 

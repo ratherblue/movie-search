@@ -4,4 +4,8 @@
 
   padding-left: $gutter-width;
   padding-right: $gutter-width;
+
+  @media (min-width: $screen-xl-min) {
+    width: $container-xl; // give a max-width for very large monitors
+  }
 }
