@@ -4,7 +4,7 @@ import MovieTile from './movie-tile';
 export default React.createClass({
   renderHeading: function() {
     if (this.props.results.length > 0) {
-      return (<h2>Results</h2>);
+      return (<h2>Results {this.props.results.length} of {this.props.totalResults}</h2>);
     } else {
       return;
     }
