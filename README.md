@@ -8,6 +8,7 @@ Build steps:
 
 1. `npm install`
 2. `npm build`
+3. Open `src/index.html` to view site
 
 
 
