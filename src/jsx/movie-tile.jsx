@@ -3,13 +3,32 @@ import dateFormat from 'dateformat';
 
 import RatingStars from './rating-stars';
 
+// separate component, but keep in same file to prevent spaghetti code
+// and because it's tied to the MovieTile
+var TileOverlay = React.createClass({
+  render: function() {
+    var releaseDate = this.props.releaseDate;
+    var voteAverage = this.props.voteAverage;
+
+    if (releaseDate !== '') {
+      releaseDate = dateFormat(releaseDate, 'GMT:ddd, mmm dS, yyyy');
+    }
+
+    return (
+      <span className="overlay">
+        <span className="release-date">{releaseDate}</span>
+        <RatingStars rating={voteAverage} />
+      </span>
+    );
+  }
+});
+
 export default React.createClass({
   render: function() {
     var poster = this.props.movie.poster_path;
     var title = this.props.movie.title;
-    var releaseDate = this.props.movie.release_date;
-    var voteAverage = this.props.movie.vote_average;
 
+    // have a default image background in case result is empty
     var divStyle = {
       backgroundImage: 'url("http://ia.media-imdb.com/images/G/01/imdb/images/nopicture/medium/film-3385785534._CB270902307_.png")'
     };
@@ -18,18 +37,11 @@ export default React.createClass({
       divStyle.backgroundImage = 'url(http://image.tmdb.org/t/p/w154' + poster + ')';
     }
 
-    if (releaseDate !== '') {
-      releaseDate = dateFormat(releaseDate, 'GMT:ddd, mmm dS, yyyy');
-    }
-
     return (
       <li className="movie-tile" title={title} key={this.props.movie.id}>
         <span className="poster" style={divStyle}></span>
         <span className="title">{title}</span>
-        <span className="overlay">
-          <span className="release-date">{releaseDate}</span>
-          <RatingStars rating={this.props.movie.vote_average} />
-        </span>
+        <TileOverlay voteAverage={this.props.movie.vote_average} releaseDate={this.props.movie.release_date} />
       </li>
     );
   }

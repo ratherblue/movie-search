@@ -10,12 +10,10 @@ export default React.createClass({
         <input type="hidden" name="api_key" value="42b3e60b6636f50062f6d3579100d83f" />
         <fieldset>
           <legend>Movie Search Form</legend>{/* always include legend for accessibility */}
-          <label className="search-label" for="query">Query</label>{/* always include label for accessibility */}
+          <label className="search-label" htmlFor="query">Query</label>{/* always include label for accessibility */}
           <input id="query" name="query" type="search" placeholder="Search Movies"
-              className="search-input" spellcheck="false" autocorrect="off" autocomplete="off" required />
-          <button type="submit" className="search-button">
-            Search <i className="fa fa-search" aria-hidden="true"></i>
-          </button>
+              className="search-input" spellCheck="false" autoCorrect="off" autoComplete="off" required />
+          <button type="submit" className="search-button">Search</button>
         </fieldset>
       </form>
     );

@@ -11,7 +11,7 @@ export default React.createClass({
   },
   render: function() {
     var results = this.props.results.map(function(result) {
-      return <MovieTile movie={result} />;
+      return <MovieTile key={result.id} movie={result} />;
     });
 
     return (
