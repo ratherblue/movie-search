@@ -9,22 +9,20 @@ const POSTER_IMG_PREFIX = 'http://image.tmdb.org/t/p/w154';
 // Separate component, but keep in same file to prevent spaghetti code
 // and because it's tied to the MovieTile
 var TileOverlay = React.createClass({
-  componentDidMount: function () {
-    console.log(this);
-
-  },
   render: function() {
     var releaseDate = this.props.releaseDate;
     var voteAverage = this.props.voteAverage;
 
-    if (releaseDate !== '') {
+    if (releaseDate === '') {
+      releaseDate = 'Release date: n/a';
+    } else {
       releaseDate = dateFormat(releaseDate, 'GMT:ddd, mmm dS, yyyy');
     }
 
     return (
       <span className="overlay">
         <span className="release-date">{releaseDate}</span>
-        <RatingStars rating={voteAverage} />
+        <RatingStars totalStars={voteAverage} blankStars={10} />
       </span>
     );
   }

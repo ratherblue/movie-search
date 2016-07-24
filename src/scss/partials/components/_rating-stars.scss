@@ -1,0 +1,21 @@
+.rating-stars {
+  display: block;
+  font-size: 12px;
+  -webkit-background-clip: text;
+  color: #fc0;
+  white-space: nowrap;
+  overflow: visible;
+
+  .rating-star {
+    font-weight: bold;
+  }
+
+  .partial-star {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .empty-star {
+    color: #999;
+  }
+}

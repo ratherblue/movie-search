@@ -22,7 +22,8 @@ export default React.createClass({
              previousPage={this.props.previousPage} nextPage={this.props.nextPage} />
         </div>
         <ReactCSSTransitionGroup component="ul" className="search-results" transitionAppear={true}
-            transitionName="movie-tile" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
+            transitionName="movie-tile" transitionAppearTimeout={500}
+            transitionEnterTimeout={500} transitionLeaveTimeout={500}>
           {results}
         </ReactCSSTransitionGroup>
       </div>

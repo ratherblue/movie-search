@@ -1,24 +1,43 @@
 import React from 'react';
 
-// Don't have time to implement, but this would be a stand-alone module
-// that shows rating stars based on a numerator and a denominator.
-// Can use an icon font with `background-clip: text` to do partially-filled stars.
-
 export default React.createClass({
-  rating: function() {
-    var rating = this.props.rating;
+  className: function(index) {
+    var filledStars = this.props.totalStars;
 
-    if (rating === 0) {
-      return 'Rating: n/a';
+    if (Math.ceil(filledStars) === index) {
+      return 'partial-star';
+    } else if (Math.ceil(filledStars) < index) {
+      return 'empty-star';
     } else {
-      return 'Rating: ' + rating + '/10';
+      return '';
+    }
+  },
+  starPercentage: function(index) {
+    var filledStars = this.props.totalStars;
+
+    var divStyle = {};
+
+    if (Math.ceil(filledStars) === index) {
+      var percentage = Math.floor((filledStars - Math.floor(filledStars)) * 100);
+      divStyle.backgroundImage = 'linear-gradient(to right, #fc0 ' + percentage + '%, #999 ' + percentage + '%';
     }
 
+    return divStyle;
+  },
+  blankStars: function() {
+    var stars = [];
+
+    for (var x = 0; x < this.props.blankStars; x++) {
+      stars.push(<i className={'fa fa-star rating-star ' + this.className(x + 1)} title={this.props.totalStars}
+          style={this.starPercentage(x + 1)} aria-hidden="true" key={x}></i>);
+    }
+
+    return stars;
   },
   render: function() {
     return (
       <span className="rating-stars">
-        {this.rating()}
+        {this.blankStars()}
       </span>
     );
   }
