@@ -24,7 +24,8 @@
   "homepage": "https://github.com/ratherblue/movie-search#readme",
   "dependencies": {
     "react": "15.2.1",
-    "react-dom": "15.2.1"
+    "react-dom": "15.2.1",
+    "react-addons-css-transition-group": "15.2.1"
   },
   "devDependencies": {
     "autoprefixer": "6.3.7",

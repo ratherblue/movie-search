@@ -9,6 +9,10 @@ const POSTER_IMG_PREFIX = 'http://image.tmdb.org/t/p/w154';
 // Separate component, but keep in same file to prevent spaghetti code
 // and because it's tied to the MovieTile
 var TileOverlay = React.createClass({
+  componentDidMount: function () {
+    console.log(this);
+
+  },
   render: function() {
     var releaseDate = this.props.releaseDate;
     var voteAverage = this.props.voteAverage;
@@ -27,22 +31,26 @@ var TileOverlay = React.createClass({
 });
 
 export default React.createClass({
-  render: function() {
+  posterBackground: function() {
     var poster = this.props.movie.poster_path;
-    var title = this.props.movie.title;
 
     // have a default image background in case result is empty
     var divStyle = {
-      backgroundImage: 'url(' + DEFAULT_POSTER_IMG + ')'
+      backgroundImage: 'url(' + ((poster === null) ? DEFAULT_POSTER_IMG : POSTER_IMG_PREFIX + poster) + ')',
     };
 
-    if (poster !== null) {
-      divStyle.backgroundImage = 'url(' + POSTER_IMG_PREFIX + poster + ')';
-    }
+    return divStyle;
+  },
+  render: function() {
+    var title = this.props.movie.title;
+
+    var animationDelay = {
+      transitionDelay: this.props.index * 50 + 'ms'
+    };
 
     return (
-      <li className="movie-tile" title={title}>
-        <span className="poster" style={divStyle}></span>
+      <li className="movie-tile" title={title} style={animationDelay}>
+        <span className="poster" style={this.posterBackground()}></span>
         <span className="title">{title}</span>
         <TileOverlay voteAverage={this.props.movie.vote_average} releaseDate={this.props.movie.release_date} />
       </li>

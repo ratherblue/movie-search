@@ -6,10 +6,22 @@
   margin: $gutter-width / 2;
   position: relative;
   border: 2px solid #444;
+  overflow: hidden; // let overlay slide up
 
   &:hover {
     .overlay {
       display: block;
+      opacity: 1;
+      top: 0;
+    }
+  }
+
+  &-appear,
+  &-enter {
+    opacity: 0.01;
+    transition: opacity 500ms ease-in-out;
+
+    &-active {
       opacity: 1;
     }
   }
@@ -31,16 +43,16 @@
   }
 
   .overlay {
-    background-color: #000;
+    background-color: rgba(0, 0, 0, .8);
     position: absolute;
-    bottom: 0;
+    top: -20px;
     width: 100%;
     opacity: 0;
-    transition: opacity .3s ease-in-out;
+    transition: opacity .15s ease-in-out, top .15s ease-in-out;
     padding: 3px 6px;
 
     .release-date {
-      font-size: 12px;
+      font-size: 14px;
       display: block;
     }
   }
@@ -48,4 +60,5 @@
 
 .rating-stars {
   display: block;
+  font-size: 12px;
 }
